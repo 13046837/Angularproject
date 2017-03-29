@@ -1,0 +1,23 @@
+{
+  "name": "Single Page Application",
+  "authors": [
+    "mvkleef <markvkleef@hotmail.com>"
+  ],
+  "description": "Single Page Applicatie Project",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-mocks": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "ng-file-upload": "^12.2.13"
+  }
+}

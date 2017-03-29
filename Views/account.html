@@ -1,0 +1,17 @@
+<form ng-controller="accountController" ng-submit="saveChanges()">
+  Username:<br>
+  <input type="text" ng-model="username" required><br>
+  Mail:<br>
+  <input type="text" ng-model="mail" required><br>
+  Current image:<img alt="Image" src={{user.image}} ngf-resize="{width: 100, height: 100}"> <br>
+  <input type="text" id="image" ng-model="image" required><br>
+  <input type="button" value="Change Password" ng-click="setPass()">
+  <div ng-show="pass()" ng-hide="!pass()">
+    New Password:<br>
+    <input type="text" ng-model="password">
+  </div><br><br>
+  <input type="submit" value="Save Changes">
+</form>
+<div class="btn-group pull-right marginBottom10" ng-hide="!checkLoggedIn()" ng-show="checkLoggedIn()">
+      <button type="button" class="btn btn-primary btn-danger" ng-click="deleteAccount()">Delete Account</button>
+</div>

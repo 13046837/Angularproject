@@ -1,0 +1,51 @@
+<html lang="en" ng-app="BlogApp" ng-controller="loginController">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css ">
+  <link rel="stylesheet" href="/Styles/index.css">
+  <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+  <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+  <script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js "></script>
+  <script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.min.js "></script>
+  <script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+  <script src="/bower_components/angular.uuid2/dist/angular-uuid2.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="/">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ng-hide="!checkAdmin()" ng-show="checkAdmin()"><a href="#!/create">Post</a></li>
+        <li ng-hide="!checkLoggedIn()" ng-show="checkLoggedIn()"><a href="#!/account">My Account</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="checkLoggedIn()" ng-show="!checkLoggedIn()">
+          <a href="#!/login">Login</a>
+        </li>
+        <li ng-hide="!checkLoggedIn()" ng-show="checkLoggedIn()">
+          <a href="/" ng-click="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <div ng-view></div>
+</div>
+
+<script src="/Scripts/app.js"></script>
+</body>
+</html>
+

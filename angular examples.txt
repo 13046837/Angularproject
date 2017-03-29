@@ -1,0 +1,16 @@
+//Voorbeeld AngularJS Routing 
+https://github.com/dominicjordan/angular-routing
+
+//Voorbeeld AngularJS Service en Factory
+https://github.com/dominicjordan/angular-services-factories
+
+
+//Voorbeeld AngularJS E2E Testing
+https://github.com/dominicjordan/angular-e2e-testing
+
+
+
+
+npm install -g protractor 
+npm start
+webdriver-manager start

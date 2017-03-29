@@ -1,0 +1,9 @@
+<form ng-controller="createController" ng-submit="createPost()">
+  Title:<br>
+  <input type="text" id="title" ng-model="title" required><br>
+  Blog Text:<br>
+  <textarea id="body" ng-model="body" rows="12" cols="100" required></textarea><br>
+  Thumbnail URL:<br>
+  <input type="text" id="image" ng-model="image" required><br><br>
+  <input type="submit" value="Submit">
+</form>

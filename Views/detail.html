@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="/Styles/details.css">
+<div class="detailPage">
+    <div class="main">
+        <div class="text-center">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h3 class="pull-left">{{post.title}}</h3>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="pull-right">
+                        <small><em>{{ post.date | date : format : timezone }}</em></small>
+                    </h4>
+                </div>
+            </div>
+        </div>                
+        <div class="panel-body">
+            <a class="thumbnail">
+            <img alt="Image" src={{post.image}}>
+            </a>
+            <div class="blog-text">
+                    {{post.body}}
+                <div class="btn-group pull-right marginBottom10" ng-hide="!checkAdmin()" ng-show="checkAdmin()">
+                    <button type="button" class="btn btn-primary btn-warning" ng-click="setEditP(post)">Edit</button>
+                    <button type="button" class="btn btn-primary btn-danger" ng-click="deletePost(post)">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div ng-show="editP()" ng-hide="!editP()">
+            <form>
+                Title:<br>
+                <input type="text" ng-model="postTitle" required><br>
+                Blog Text:<br>
+                <textarea ng-model="postText" rows="12" cols="100" required></textarea><br>
+                Thumbnail URL:<br>
+                <input type="text" id="image" ng-model="postImage" required><br><br>
+                <input type="button" value="Edit Post" ng-click="editPost()">
+            </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="comment-section">
+                    <h3>Comment Section</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="widget-area no-padding blank">
+                        <div class="status-upload">
+                            <form ng-submit="postComment()" ng-hide="!checkLoggedIn()" ng-show="checkLoggedIn()">
+                                <textarea ng-model="commentText"></textarea>
+                                <div ng-show="editC()" ng-hide="!editC()">
+                                    <button type="button" class="btn btn-success green" ng-click="editComment()">Save Changes</button>
+                                </div>
+                                <div ng-show="!editC()" ng-hide="editC()">
+                                    <button type="submit" class="btn btn-success green">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <br>
+            <div ng-repeat="x in comments">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <div class="thumbnail">
+                            <img class="img-responsive user-photo" src={{x.image}}>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>{{x.user}}</strong> <span class="text-muted">{{ x.date | date : format : timezone }}</span>
+                            </div>
+                            <div class="panel-body">
+                                <div ng-show="!edit()" ng-hide="edit()">
+                                    {{x.comment}}
+                                </div>
+                                <div class="btn-group pull-right marginBottom10" ng-show="currentuser.username == x.user" ng-hide="currentuser.username != x.user">
+                                      <button type="button" class="btn btn-primary btn-warning" ng-click="setEditC(x)">Edit</button>
+                                      <button type="button" class="btn btn-primary btn-danger" ng-click="deleteComment(x)">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

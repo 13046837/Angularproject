@@ -1,0 +1,11 @@
+<form ng-controller="registerController" ng-submit="register()">
+  Username:<br>
+  <input type="text" id="username" ng-model="username" ng-minlength="6" ng-maxlength="16" required><br>
+  Email:<br>
+  <input type="email" id="mail" ng-model="mail"  ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required><br>
+  Password:<br>
+  <input type="text" id="password" ng-model="password" required><br>
+  Avatar URL:<br>
+  <input type="text" id="image" ng-model="image" required><br><br>
+  <input type="submit" value="Submit">
+</form>

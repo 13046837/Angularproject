@@ -1,0 +1,11 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "mark",
+  "license": "ISC"
+}

@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/Styles/main.css">
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 hidden-sm hidden-xs sidenav">
+        <p><a ng-click="showAll()">Show All</a></p>
+      <div ng-repeat="x in dates">
+        <p><a ng-click="filterDate(x)">{{x.dateString}}</a></p>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-12 text-left">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="postlist">
+              <div ng-repeat="x in posts | limitTo: listLength">
+              <div class="panel">
+                      <div class="panel-heading">
+                          <div class="text-center">
+                              <div class="row">
+                                  <div class="col-sm-9">
+                                      <h3 class="pull-left">{{x.title}}</h3>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <h4 class="pull-right">
+                                      <small><em>{{ x.date | date : format : timezone }}</em></small>
+                                      </h4>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>                  
+                  <div class="panel-body">
+                      <a class="thumbnail">
+                          <img alt="Image" src={{x.image}}>
+                      </a>
+                       <a href="#!/post/{{x.id}}">Read more</a>
+                  </div>
+              </div>
+              </div>
+          </div>
+          <div class="text-center"><a href="#" id="loadmore" class="btn btn-primary" ng-click="addToList()">Older Posts...</a></div>
+        </div>
+          
+        </div>
+    </div> 
+  </div>
+</div>

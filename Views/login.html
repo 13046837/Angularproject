@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/Styles/login.css">
+<div class="main">
+        <div class="text-center">
+            <div class="row">
+                    <form ng-controller="loginController" ng-submit="login()">
+                      Username:<br>
+                      <input type="text" id="username" ng-model="username" required><br>
+                      Password:<br>
+                      <input type="text" id="password" ng-model="password" required><br>
+                      <div class="TryAgain" ng-hide="!checkTried()" ng-show="checkTried()">
+                          Try Again <br>
+                      </div>
+                      <input type="submit" value="Login">
+                      <a href="#!/register">Register</a>
+                    </form>
+            </div>
+        </div>
+</div>
